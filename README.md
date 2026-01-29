@@ -36,4 +36,4 @@ abefe-motors-website/
 Joshua Abefe - [Portfolio](https://joshuaabefe.github.io/)
 
 ## 📄 License
-MIT License (or choose your preferred license)
+MIT License
