@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a test drive with Abefe Motors - Nigeria's trusted car dealership">
+    <meta name="keywords" content="book test drive, car booking Nigeria, Abefe Motors appointment">
+    <meta name="author" content="Abefe Motors">
+    <title>Book a Test Drive - Abefe Motors</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Abefe Motors Car Dealership</h1>
+        <p><strong>Nigeria's Trusted Automobile Partner</strong></p>
+        <nav>
+            <a href="index.html#home">Home</a> |
+            <a href="index.html#about">About Us</a> |
+            <a href="index.html#inventory">Our Inventory</a> |
+            <a href="index.html#services">Services</a> |
+            <a href="booking.html">Book Test Drive</a> |
+            <a href="index.html#testimonials">Testimonials</a> |
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <hr>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Booking Form Section -->
+        <section id="booking-form">
+            <h2>Book Your Test Drive</h2>
+            <p>Experience your dream car firsthand! Schedule a test drive with Abefe Motors and discover why we're Nigeria's most trusted car dealership. Fill out the form below and our team will contact you to confirm your appointment.</p>
+            
+            <blockquote>
+                <p><em>"The test drive experience at Abefe Motors was exceptional. They were professional and made me feel comfortable throughout!"</em></p>
+                <footer>- Mr. Tunde Bakare, Happy Customer</footer>
+            </blockquote>
+
+            <hr>
+
+            <h3>Test Drive Booking Form</h3>
+            <form action="#confirmation" method="get">
+                <!-- Personal Information Fieldset -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <label for="fullname">Full Name: *</label><br>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" size="40" required><br><br>
+                    
+                    <label for="email-address">Email Address: *</label><br>
+                    <input type="email" id="email-address" name="email" placeholder="example@email.com" size="40" required><br><br>
+                    
+                    <label for="phone-number">Phone Number: *</label><br>
+                    <input type="tel" id="phone-number" name="phone" placeholder="08012345678" pattern="[0-9]{11}" maxlength="11" required><br>
+                    <small>Enter 11-digit Nigerian phone number (e.g., 08012345678)</small><br><br>
+                    
+                    <label for="age">Age: *</label><br>
+                    <input type="number" id="age" name="age" min="18" max="100" placeholder="18" required><br>
+                    <small>You must be 18 years or older to book a test drive</small><br><br>
+                    
+                    <label for="address">Home Address:</label><br>
+                    <textarea id="address" name="address" rows="3" cols="50" placeholder="Enter your full address in Lagos"></textarea><br><br>
+                </fieldset>
+
+                <br>
+
+                <!-- Test Drive Details Fieldset -->
+                <fieldset>
+                    <legend>Test Drive Details</legend>
+                    
+                    <label for="vehicle-model">Select Vehicle: *</label><br>
+                    <select id="vehicle-model" name="vehicle" required>
+                        <option value="">-- Choose a vehicle --</option>
+                        <option value="Toyota Camry 2023">2023 Toyota Camry - ₦18,500,000</option>
+                        <option value="Honda Accord 2022">2022 Honda Accord - ₦16,200,000</option>
+                        <option value="Lexus RX 350 2021">2021 Lexus RX 350 - ₦28,900,000</option>
+                        <option value="Toyota Corolla 2023">2023 Toyota Corolla - ₦14,800,000</option>
+                        <option value="Honda CR-V 2022">2022 Honda CR-V - ₦22,300,000</option>
+                        <option value="Other">Other (Please specify in comments)</option>
+                    </select><br><br>
+                    
+                    <label for="preferred-date">Preferred Date: *</label><br>
+                    <input type="date" id="preferred-date" name="date" min="2026-01-25" required><br>
+                    <small>Select a date from tomorrow onwards</small><br><br>
+                    
+                    <label for="preferred-time">Preferred Time: *</label><br>
+                    <input type="time" id="preferred-time" name="time" min="08:00" max="18:00" required><br>
+                    <small>Business hours: 8:00 AM - 6:00 PM</small><br><br>
+                    
+                    <label>Do you have a valid Nigerian driver's license? *</label><br>
+                    <input type="radio" id="license-yes" name="license" value="Yes" required>
+                    <label for="license-yes">Yes, I have a valid license</label><br>
+                    <input type="radio" id="license-no" name="license" value="No">
+                    <label for="license-no">No, I don't have a license</label><br><br>
+                    
+                    <label for="pickup-location">Preferred Pickup Location: *</label><br>
+                    <select id="pickup-location" name="location" required>
+                        <option value="">-- Select location --</option>
+                        <option value="Showroom">Abefe Motors Showroom - Lekki</option>
+                        <option value="Home">My Home Address</option>
+                        <option value="Office">My Office</option>
+                        <option value="Other">Other Location</option>
+                    </select><br><br>
+                </fieldset>
+
+                <br>
+
+                <!-- Purchase Information Fieldset -->
+                <fieldset>
+                    <legend>Purchase Information</legend>
+                    
+                    <label for="budget-range">Your Budget Range: *</label><br>
+                    <select id="budget-range" name="budget" required>
+                        <option value="">-- Select budget range --</option>
+                        <option value="Below 10M">Below ₦10,000,000</option>
+                        <option value="10M - 20M">₦10,000,000 - ₦20,000,000</option>
+                        <option value="20M - 30M">₦20,000,000 - ₦30,000,000</option>
+                        <option value="30M - 40M">₦30,000,000 - ₦40,000,000</option>
+                        <option value="Above 40M">Above ₦40,000,000</option>
+                    </select><br><br>
+                    
+                    <label for="payment-preference">Preferred Payment Method:</label><br>
+                    <select id="payment-preference" name="payment">
+                        <option value="Undecided">Not decided yet</option>
+                        <option value="Cash">Full Cash Payment</option>
+                        <option value="Installment">Installment Plan (3-12 months)</option>
+                        <option value="Bank Loan">Bank Loan/Financing</option>
+                    </select><br><br>
+                    
+                    <label>Vehicle Features You're Looking For: (Check all that apply)</label><br>
+                    <input type="checkbox" id="feature-ac" name="features" value="Air Conditioning">
+                    <label for="feature-ac">Air Conditioning</label><br>
+                    
+                    <input type="checkbox" id="feature-camera" name="features" value="Reverse Camera">
+                    <label for="feature-camera">Reverse Camera</label><br>
+                    
+                    <input type="checkbox" id="feature-leather" name="features" value="Leather Seats">
+                    <label for="feature-leather">Leather Seats</label><br>
+                    
+                    <input type="checkbox" id="feature-sunroof" name="features" value="Sunroof">
+                    <label for="feature-sunroof">Sunroof/Panoramic Roof</label><br>
+                    
+                    <input type="checkbox" id="feature-navigation" name="features" value="Navigation">
+                    <label for="feature-navigation">Navigation System</label><br>
+                    
+                    <input type="checkbox" id="feature-sound" name="features" value="Premium Sound">
+                    <label for="feature-sound">Premium Sound System</label><br>
+                    
+                    <input type="checkbox" id="feature-alloy" name="features" value="Alloy Wheels">
+                    <label for="feature-alloy">Alloy Wheels</label><br>
+                    
+                    <input type="checkbox" id="feature-sensor" name="features" value="Parking Sensors">
+                    <label for="feature-sensor">Parking Sensors</label><br><br>
+                    
+                    <label for="car-usage">Primary Use of Vehicle:</label><br>
+                    <select id="car-usage" name="usage">
+                        <option value="Personal">Personal/Family Use</option>
+                        <option value="Business">Business/Commercial</option>
+                        <option value="Both">Both Personal and Business</option>
+                        <option value="Ride-hailing">Ride-hailing/Taxi Service</option>
+                    </select><br><br>
+                </fieldset>
+
+                <br>
+
+                <!-- Additional Information Fieldset -->
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    
+                    <label for="experience-level">Car Ownership Experience:</label><br>
+                    <select id="experience-level" name="experience">
+                        <option value="First-time">First Time Buyer</option>
+                        <option value="1 car">Owned 1 car before</option>
+                        <option value="2-3 cars">Owned 2-3 cars</option>
+                        <option value="Multiple">Owned more than 3 cars</option>
+                    </select><br><br>
+                    
+                    <label for="trade-in">Do you have a vehicle for trade-in?</label><br>
+                    <input type="radio" id="trade-yes" name="trade-in" value="Yes">
+                    <label for="trade-yes">Yes</label>
+                    <input type="radio" id="trade-no" name="trade-in" value="No" checked>
+                    <label for="trade-no">No</label><br><br>
+                    
+                    <label for="referral-source">How did you hear about Abefe Motors?</label><br>
+                    <select id="referral-source" name="referral">
+                        <option value="">-- Select one --</option>
+                        <option value="Google">Google Search</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Twitter">Twitter</option>
+                        <option value="Friend">Friend/Family Referral</option>
+                        <option value="Billboard">Billboard/Outdoor Advertisement</option>
+                        <option value="Radio">Radio Advertisement</option>
+                        <option value="Newspaper">Newspaper/Magazine</option>
+                        <option value="Other">Other</option>
+                    </select><br><br>
+                    
+                    <label for="special-requests">Special Requests or Questions:</label><br>
+                    <textarea id="special-requests" name="comments" rows="5" cols="50" placeholder="Let us know if you have any special requests, questions, or if you need us to demonstrate specific features..."></textarea><br><br>
+                </fieldset>
+
+                <br>
+
+                <!-- Terms and Conditions -->
+                <fieldset>
+                    <legend>Terms and Conditions</legend>
+                    
+                    <input type="checkbox" id="terms-agree" name="terms" required>
+                    <label for="terms-agree">I agree to the <a href="#terms" target="_blank">Terms and Conditions</a> and <a href="#privacy" target="_blank">Privacy Policy</a> *</label><br><br>
+                    
+                    <input type="checkbox" id="newsletter-subscribe" name="newsletter">
+                    <label for="newsletter-subscribe">Yes, I want to receive promotional offers, vehicle updates, and news from Abefe Motors via email and SMS</label><br><br>
+                    
+                    <input type="checkbox" id="contact-consent" name="contact">
+                    <label for="contact-consent">I consent to being contacted by Abefe Motors regarding my test drive booking and future vehicle inquiries</label><br><br>
+                </fieldset>
+
+                <br>
+
+                <p><strong>Note:</strong> <small>All fields marked with * are required. Please ensure all information is accurate before submitting.</small></p>
+                
+                <input type="submit" value="Book My Test Drive Now">
+                <input type="reset" value="Clear Form">
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Confirmation Message Section (Displayed after form submission) -->
+        <section id="confirmation">
+            <h2>✓ Booking Confirmation</h2>
+            
+            <article>
+                <h3><mark>Thank You for Booking with Abefe Motors!</mark></h3>
+                
+                <p><strong>Your test drive appointment has been successfully received.</strong></p>
+                
+                <blockquote>
+                    <p><em>We're excited to help you find your perfect vehicle!</em></p>
+                </blockquote>
+                
+                <h4>What Happens Next?</h4>
+                <ol>
+                    <li><strong>Email Confirmation:</strong> You will receive a confirmation email at the address you provided within 30 minutes with all your booking details.</li>
+                    <li><strong>Personal Contact:</strong> Our customer service team will call or WhatsApp you within 24 hours to confirm your preferred date and time.</li>
+                    <li><strong>Reminder Notification:</strong> We'll send you an SMS reminder 24 hours before your scheduled test drive.</li>
+                    <li><strong>Preparation:</strong> Please bring the following on the day of your test drive:
+                        <ul>
+                            <li>Valid Nigerian driver's license</li>
+                            <li>Valid means of identification (National ID, International Passport, Voter's Card, or Driver's License)</li>
+                            <li>Proof of address (utility bill, bank statement - optional but recommended)</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h4>Your Booking Reference</h4>
+                <p><strong>Reference Number:</strong> <mark>ABEFE-TESTDRIVE-2026-0125</mark></p>
+                <p><small>Please keep this reference number for your records and quote it in any communication with us regarding your booking.</small></p>
+                
+                <h4>Important Information</h4>
+                <table border="1" cellpadding="10" cellspacing="0">
+                    <tr>
+                        <th>Detail</th>
+                        <th>Information</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Test Drive Duration</strong></td>
+                        <td>30-45 minutes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Location</strong></td>
+                        <td>Abefe Motors Showroom<br>45 Lekki-Ajah Expressway<br>Beside Total Filling Station<br>Island, Lagos State</td>
+                    </tr>
+                    <tr>
+                        <td><strong>What's Included</strong></td>
+                        <td>Vehicle demonstration, feature walkthrough, road test, financing consultation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cancellation Policy</strong></td>
+                        <td>Please notify us at least 24 hours in advance if you need to reschedule or cancel</td>
+                    </tr>
+                </table>
+                
+                <br>
+                
+                <h4>Need to Make Changes?</h4>
+                <p>If you need to reschedule, cancel, or have any questions about your booking, please contact us:</p>
+                <address>
+                    <strong>Phone:</strong> +234 *** *** ****<br>
+                    <strong>WhatsApp:</strong> +234 *** *** ****<br>
+                    <strong>Email:</strong> info@abefemotors.com<br>
+                    <strong>Business Hours:</strong> Monday - Friday: 8:00 AM - 6:00 PM, Saturday: 9:00 AM - 5:00 PM
+                </address>
+                
+                <br>
+                
+                <h4>While You Wait...</h4>
+                <p>Make the most of your time before the test drive:</p>
+                <ul>
+                    <li><a href="index.html#inventory">Browse our complete vehicle inventory</a></li>
+                    <li><a href="index.html#services">Learn about our flexible payment plans</a></li>
+                    <li><a href="index.html#testimonials">Read what other customers are saying</a></li>
+                    <li><a href="index.html#contact">Visit our showroom location on Google Maps</a></li>
+                </ul>
+                
+                <p><strong>We look forward to seeing you soon!</strong></p>
+                
+                <p><a href="index.html">← Return to Homepage</a> | <a href="booking.html">Book Another Test Drive</a></p>
+            </article>
+        </section>
+
+        <hr>
+
+        <!-- Additional Help Section -->
+        <section>
+            <h3>Frequently Asked Questions</h3>
+            
+            <article>
+                <h4>What should I bring for the test drive?</h4>
+                <p>Please bring a valid Nigerian driver's license and a form of identification. We also recommend bringing proof of address if you're planning to proceed with a purchase.</p>
+            </article>
+            
+            <article>
+                <h4>Can someone accompany me during the test drive?</h4>
+                <p>Yes! You're welcome to bring one or two people with you. However, only the person who booked the test drive (with a valid license) can drive the vehicle.</p>
+            </article>
+            
+            <article>
+                <h4>How long does a test drive take?</h4>
+                <p>A typical test drive lasts between 30-45 minutes. This includes time for vehicle demonstration, the actual driving experience, and a brief consultation about financing options.</p>
+            </article>
+            
+            <article>
+                <h4>What if I want to test drive multiple vehicles?</h4>
+                <p>Absolutely! We encourage it. Please mention this when our team contacts you, and we'll schedule adequate time for you to test drive multiple vehicles.</p>
+            </article>
+            
+            <article>
+                <h4>Is there any cost for a test drive?</h4>
+                <p>No, test drives are completely free at Abefe Motors. There's no obligation to purchase.</p>
+            </article>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Abefe Motors - Nigeria's Trusted Car Dealership</strong></p>
+        <p><small>&copy; 2026 Abefe Motors. All Rights Reserved.</small></p>
+        <p>
+            <a href="index.html#home">Home</a> | 
+            <a href="index.html#about">About Us</a> | 
+            <a href="index.html#inventory">Inventory</a> | 
+            <a href="booking.html">Book Test Drive</a> | 
+            <a href="index.html#contact">Contact</a>
+        </p>
+        <p>
+            <strong>Connect with us:</strong><br>
+            <a href="#" target="_blank">Facebook</a> | 
+            <a href="#" target="_blank">Twitter</a> | 
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">WhatsApp</a>
+        </p>
+        <p><small>Developed by <a href="https://joshuaabefe.github.io/" target="_blank">Joshua Abefe</a> | Serving Lagos and All of Nigeria</small></p>
+    </footer>
+</body>
+</html>
