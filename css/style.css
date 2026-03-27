@@ -1,0 +1,57 @@
+/* --- Core Typography & Base --- */
+body { font-family: 'DM Sans', sans-serif; }
+.bebas { font-family: 'Bebas Neue', sans-serif; }
+.serif { font-family: 'DM Serif Display', serif; }
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 9vw, 8.5rem);
+  line-height: .95;
+  letter-spacing: .02em;
+}
+
+/* --- Navigation & Header --- */
+.nav-link { position: relative; padding-bottom: 2px; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: #EDAE49;
+  transition: width .25s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease;
+}
+#mobile-menu.open { max-height: 520px; } /* Increased to fit all links */
+#site-header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.35); }
+
+/* --- Interactions & Cards --- */
+.vehicle-card { transition: transform .3s ease, box-shadow .3s ease; }
+.vehicle-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,61,91,.15); }
+.vehicle-card .card-img { transition: transform .45s ease; }
+.vehicle-card:hover .card-img { transform: scale(1.05); }
+
+.gallery-item .gimg { transition: transform .4s ease; }
+.gallery-item:hover .gimg { transform: scale(1.08); }
+
+/* --- Forms & Validation --- */
+input:focus, select:focus, textarea:focus { 
+  outline: 2px solid #EDAE49; 
+  outline-offset: 0; 
+  border-color: #EDAE49; 
+}
+.field-error { border-color: #ef4444 !important; outline-color: #ef4444 !important; }
+
+/* --- Booking Specific (Step Progress & FAQ) --- */
+.step-dot { transition: background .3s, border-color .3s, color .3s; }
+.step-dot.active { background-color: #EDAE49 !important; border-color: #EDAE49 !important; color: #003D5B !important; }
+.step-dot.done { background-color: #003D5B !important; border-color: #003D5B !important; color: white !important; }
+
+.faq-arrow { transition: transform .3s ease; }
+.faq-arrow.rotated { transform: rotate(180deg); }
+.faq-body { display: none; }

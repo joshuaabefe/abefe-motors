@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a test drive with Spectre Autos – Nigeria's premium car dealership in Lagos." />
+  <title>Book a Test Drive – Spectre Autos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { gold: '#EDAE49', navy: '#003D5B', 'navy-light': '#30638E' } } }
+    };
+  </script>
+    
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="car.png" />
+  <link rel="shortcut icon" href="car.png" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- HEADER — only Home + Book Test Drive -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-shadow duration-300" style="background-color:#003D5B;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo links back to home page -->
+      <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+        <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background-color:#EDAE49;">
+          <svg class="w-5 h-5" style="color:#003D5B;" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6.5l-1-4H4L3 6.5H1v2h1l1 11h18l1-11h1v-2h-2zm-3.2 11H6.2l-.8-9h13.2l-.8 9zm.9-11H5.3l.7-2.8h12l.7 2.8z"/></svg>
+        </div>
+        <div class="leading-none">
+          <span class="bebas text-white text-xl tracking-widest block">SPECTRE</span>
+          <span class="text-xs tracking-widest font-light uppercase" style="color:#EDAE49;">Autos</span>
+        </div>
+      </a>
+      <!-- Desktop nav — Home + Book Test Drive ONLY -->
+      <nav class="hidden lg:flex items-center gap-6" aria-label="Main navigation">
+        <a href="index.html" class="nav-link text-white/80 hover:text-white text-sm font-medium">Home</a>
+        <a href="booking.html" class="font-semibold text-sm px-5 py-2.5 rounded-full whitespace-nowrap" style="background-color:#EDAE49;color:#003D5B;">Book Test Drive</a>
+      </nav>
+      <button id="menu-btn" class="lg:hidden text-white p-2 rounded" aria-label="Menu" aria-expanded="false">
+        <svg id="icon-open"  class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu — Home + Book Test Drive ONLY -->
+  <div id="mobile-menu" style="background-color:#003D5B;border-top:1px solid rgba(255,255,255,.1)">
+    <nav class="flex flex-col px-4 py-3">
+      <a href="index.html" class="text-white/80 hover:text-white py-3 text-sm font-medium border-b border-white/10">Home</a>
+      <a href="booking.html" class="mt-3 mb-1 text-center font-semibold text-sm px-5 py-3 rounded-full" style="background-color:#EDAE49;color:#003D5B;">Book Test Drive</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pt-16 lg:pt-20">
+
+  <!-- HERO BANNER -->
+  <div class="relative overflow-hidden" style="background-color:#003D5B;">
+    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&h=400&fit=crop" alt="Customer test driving a car" class="absolute inset-0 w-full h-full object-cover" style="opacity:.22;" />
+    <div class="absolute inset-0" style="background:linear-gradient(to right,#003D5B 40%,rgba(0,61,91,.5) 100%);"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <p class="text-xs font-medium uppercase mb-3" style="color:#EDAE49;letter-spacing:.3em;">Spectre Autos</p>
+      <h1 class="bebas text-6xl sm:text-8xl text-white tracking-wider leading-none mb-4">BOOK YOUR<br/><span style="color:#EDAE49;">TEST DRIVE</span></h1>
+      <p class="max-w-lg text-sm sm:text-base leading-relaxed" style="color:rgba(255,255,255,.65);">Experience your dream car firsthand. Fill in the form below and our team will confirm your appointment within 24 hours.</p>
+    </div>
+  </div>
+
+  <!-- STEP PROGRESS BAR -->
+  <div class="bg-white border-b border-gray-100 sticky z-40" style="top:64px;">
+    <div class="max-w-3xl mx-auto px-4 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="step-dot w-8 h-8 rounded-full border-2 border-gray-200 flex items-center justify-center text-xs font-bold text-gray-400" data-step="1">1</div>
+          <span class="text-xs text-gray-500 hidden sm:block">Personal Info</span>
+        </div>
+        <div class="flex-1 mx-3" style="height:2px;background:#e5e7eb;"><div id="prog-1" style="height:100%;background:#EDAE49;width:0%;transition:width .4s ease;"></div></div>
+        <div class="flex items-center gap-2">
+          <div class="step-dot w-8 h-8 rounded-full border-2 border-gray-200 flex items-center justify-center text-xs font-bold text-gray-400" data-step="2">2</div>
+          <span class="text-xs text-gray-500 hidden sm:block">Test Drive Details</span>
+        </div>
+        <div class="flex-1 mx-3" style="height:2px;background:#e5e7eb;"><div id="prog-2" style="height:100%;background:#EDAE49;width:0%;transition:width .4s ease;"></div></div>
+        <div class="flex items-center gap-2">
+          <div class="step-dot w-8 h-8 rounded-full border-2 border-gray-200 flex items-center justify-center text-xs font-bold text-gray-400" data-step="3">3</div>
+          <span class="text-xs text-gray-500 hidden sm:block">Preferences</span>
+        </div>
+        <div class="flex-1 mx-3" style="height:2px;background:#e5e7eb;"><div id="prog-3" style="height:100%;background:#EDAE49;width:0%;transition:width .4s ease;"></div></div>
+        <div class="flex items-center gap-2">
+          <div class="step-dot w-8 h-8 rounded-full border-2 border-gray-200 flex items-center justify-center text-xs font-bold text-gray-400" data-step="4">4</div>
+          <span class="text-xs text-gray-500 hidden sm:block">Confirm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <form id="booking-form" novalidate class="space-y-8">
+
+      <!-- STEP 1 Personal Info -->
+      <fieldset class="bg-white rounded-2xl shadow-sm overflow-hidden" style="border:1px solid #e5e7eb;">
+        <legend class="sr-only">Personal Information</legend>
+        <div class="px-6 py-4" style="background-color:#003D5B;">
+          <h2 class="serif text-xl text-white">1. Personal Information</h2>
+        </div>
+        <div class="p-6 grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="fullname" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Full Name <span style="color:#EDAE49;">*</span></label>
+            <input type="text" id="fullname" name="fullname" required placeholder="Your full name" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" />
+          </div>
+          <div>
+            <label for="email-address" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Email <span style="color:#EDAE49;">*</span></label>
+            <input type="email" id="email-address" name="email" required placeholder="you@example.com" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" />
+          </div>
+          <div>
+            <label for="phone-number" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Phone <span style="color:#EDAE49;">*</span></label>
+            <input type="tel" id="phone-number" name="phone" required placeholder="08012345678" maxlength="11" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" />
+            <p class="text-xs text-gray-400 mt-1">11-digit Nigerian number</p>
+          </div>
+          <div>
+            <label for="age" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Age <span style="color:#EDAE49;">*</span></label>
+            <input type="number" id="age" name="age" required min="18" max="100" placeholder="Must be 18+" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" />
+          </div>
+          <div class="sm:col-span-2">
+            <label for="address" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Home Address</label>
+            <textarea id="address" name="address" rows="2" placeholder="Your address in Lagos" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white resize-none"></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- STEP 2 Test Drive Details -->
+      <fieldset class="bg-white rounded-2xl shadow-sm overflow-hidden" style="border:1px solid #e5e7eb;">
+        <legend class="sr-only">Test Drive Details</legend>
+        <div class="px-6 py-4" style="background-color:#003D5B;">
+          <h2 class="serif text-xl text-white">2. Test Drive Details</h2>
+        </div>
+        <div class="p-6 grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="vehicle-model" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Select Vehicle <span style="color:#EDAE49;">*</span></label>
+            <select id="vehicle-model" name="vehicle" required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white">
+              <option value="">-- Choose a vehicle --</option>
+              <option>2023 Toyota Camry – ₦18,500,000</option>
+              <option>2022 Honda Accord – ₦16,200,000</option>
+              <option>2021 Lexus RX 350 – ₦28,900,000</option>
+              <option>2023 Toyota Corolla – ₦14,800,000</option>
+              <option>2022 Honda CR-V – ₦22,300,000</option>
+              <option>Other (specify in comments)</option>
+            </select>
+          </div>
+          <div>
+            <label for="pickup-location" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Pickup Location <span style="color:#EDAE49;">*</span></label>
+            <select id="pickup-location" name="location" required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white">
+              <option value="">-- Select location --</option>
+              <option value="Showroom">Spectre Autos Showroom – Lekki</option>
+              <option value="Home">My Home Address</option>
+              <option value="Office">My Office</option>
+              <option value="Other">Other Location</option>
+            </select>
+          </div>
+          <div>
+            <label for="preferred-date" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Preferred Date <span style="color:#EDAE49;">*</span></label>
+            <input type="date" id="preferred-date" name="date" required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" />
+          </div>
+          <div>
+            <label for="preferred-time" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Preferred Time <span style="color:#EDAE49;">*</span></label>
+            <input type="time" id="preferred-time" name="time" required min="08:00" max="18:00" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" />
+            <p class="text-xs text-gray-400 mt-1">Business hours: 8AM – 6PM</p>
+          </div>
+          <div class="sm:col-span-2">
+            <p class="block text-sm font-semibold mb-2" style="color:#003D5B;">Valid Nigerian Driver's Licence? <span style="color:#EDAE49;">*</span></p>
+            <div class="flex gap-6">
+              <label class="flex items-center gap-2.5 cursor-pointer"><input type="radio" name="license" value="Yes" required class="w-4 h-4" style="accent-color:#EDAE49;" /><span class="text-sm text-gray-700">Yes</span></label>
+              <label class="flex items-center gap-2.5 cursor-pointer"><input type="radio" name="license" value="No" class="w-4 h-4" style="accent-color:#EDAE49;" /><span class="text-sm text-gray-700">No</span></label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- STEP 3 Preferences -->
+      <fieldset class="bg-white rounded-2xl shadow-sm overflow-hidden" style="border:1px solid #e5e7eb;">
+        <legend class="sr-only">Purchase Preferences</legend>
+        <div class="px-6 py-4" style="background-color:#003D5B;">
+          <h2 class="serif text-xl text-white">3. Purchase Preferences</h2>
+        </div>
+        <div class="p-6 space-y-6">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="budget-range" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Budget Range <span style="color:#EDAE49;">*</span></label>
+              <select id="budget-range" name="budget" required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white">
+                <option value="">-- Select budget --</option>
+                <option>Below ₦10,000,000</option>
+                <option>₦10M – ₦20M</option>
+                <option>₦20M – ₦30M</option>
+                <option>₦30M – ₦40M</option>
+                <option>Above ₦40M</option>
+              </select>
+            </div>
+            <div>
+              <label for="payment-preference" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Payment Method</label>
+              <select id="payment-preference" name="payment" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white">
+                <option value="Undecided">Not decided yet</option>
+                <option>Full Cash Payment</option>
+                <option>Instalment Plan (3–12 months)</option>
+                <option>Bank Loan / Financing</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-semibold mb-3" style="color:#003D5B;">Desired Vehicle Features</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600"><input type="checkbox" name="features" value="Air Conditioning" style="accent-color:#EDAE49;" /> A/C</label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600"><input type="checkbox" name="features" value="Reverse Camera" style="accent-color:#EDAE49;" /> Reverse Cam</label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600"><input type="checkbox" name="features" value="Leather Seats" style="accent-color:#EDAE49;" /> Leather Seats</label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600"><input type="checkbox" name="features" value="Sunroof" style="accent-color:#EDAE49;" /> Sunroof</label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600"><input type="checkbox" name="features" value="Navigation" style="accent-color:#EDAE49;" /> Navigation</label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600"><input type="checkbox" name="features" value="Premium Sound" style="accent-color:#EDAE49;" /> Premium Sound</label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600"><input type="checkbox" name="features" value="Alloy Wheels" style="accent-color:#EDAE49;" /> Alloy Wheels</label>
+              <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600"><input type="checkbox" name="features" value="Parking Sensors" style="accent-color:#EDAE49;" /> Parking Sensors</label>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="car-usage" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Primary Use</label>
+              <select id="car-usage" name="usage" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white">
+                <option>Personal / Family</option><option>Business / Commercial</option><option>Both</option><option>Ride-hailing / Taxi</option>
+              </select>
+            </div>
+            <div>
+              <label for="referral-source" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">How Did You Hear of Us?</label>
+              <select id="referral-source" name="referral" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white">
+                <option value="">-- Select one --</option><option>Google Search</option><option>Facebook</option><option>Instagram</option><option>Friend / Family</option><option>Billboard</option><option>Radio</option><option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm font-semibold mb-2" style="color:#003D5B;">Vehicle for Trade-In?</p>
+            <div class="flex gap-6">
+              <label class="flex items-center gap-2.5 cursor-pointer"><input type="radio" name="trade-in" value="Yes" class="w-4 h-4" style="accent-color:#EDAE49;" /><span class="text-sm text-gray-700">Yes</span></label>
+              <label class="flex items-center gap-2.5 cursor-pointer"><input type="radio" name="trade-in" value="No" checked class="w-4 h-4" style="accent-color:#EDAE49;" /><span class="text-sm text-gray-700">No</span></label>
+            </div>
+          </div>
+          <div>
+            <label for="special-requests" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Special Requests / Questions</label>
+            <textarea id="special-requests" name="comments" rows="4" placeholder="Any special requests or questions for our team…" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white resize-none"></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- STEP 4 Confirm -->
+      <fieldset class="bg-white rounded-2xl shadow-sm overflow-hidden" style="border:1px solid #e5e7eb;">
+        <legend class="sr-only">Terms and Conditions</legend>
+        <div class="px-6 py-4" style="background-color:#003D5B;">
+          <h2 class="serif text-xl text-white">4. Confirm &amp; Submit</h2>
+        </div>
+        <div class="p-6 space-y-4">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" id="terms-agree" name="terms" required class="mt-1 w-4 h-4 flex-shrink-0" style="accent-color:#EDAE49;" />
+            <span class="text-sm text-gray-600">I agree to the <a href="#" class="font-medium hover:underline" style="color:#003D5B;">Terms &amp; Conditions</a> and <a href="#" class="font-medium hover:underline" style="color:#003D5B;">Privacy Policy</a> <span style="color:#EDAE49;">*</span></span>
+          </label>
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" id="newsletter-subscribe" name="newsletter" class="mt-1 w-4 h-4 flex-shrink-0" style="accent-color:#EDAE49;" />
+            <span class="text-sm text-gray-600">Yes, I want to receive promotional offers and vehicle updates from Spectre Autos</span>
+          </label>
+          <p class="text-xs text-gray-400 pt-1">Fields marked <span style="color:#EDAE49;font-weight:bold;">*</span> are required.</p>
+          <div id="booking-feedback" class="hidden rounded-xl px-5 py-4 text-sm font-medium"></div>
+          <div class="flex gap-4 pt-2">
+            <button type="submit" class="flex-1 text-navy font-bold py-4 rounded-xl text-sm sm:text-base" style="background-color:#EDAE49;color:#003D5B;">Book My Test Drive →</button>
+            <button type="reset" id="booking-reset" class="px-6 bg-gray-100 text-gray-600 font-semibold py-4 rounded-xl hover:bg-gray-200 text-sm">Clear</button>
+          </div>
+        </div>
+      </fieldset>
+
+    </form>
+  </div>
+
+  <!-- CONFIRMATION PANEL (hidden until form submit) -->
+  <div id="confirmation-panel" class="hidden max-w-3xl mx-auto px-4 sm:px-6 pb-16">
+    <div class="bg-white rounded-2xl shadow-sm overflow-hidden" style="border:1px solid rgba(237,174,73,.4);">
+      <div class="px-8 py-8 text-center" style="background-color:#EDAE49;">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background-color:#003D5B;">
+          <svg class="w-8 h-8" style="color:#EDAE49;" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h2 class="serif text-3xl" style="color:#003D5B;">Booking Confirmed!</h2>
+        <p class="text-sm mt-1" style="color:rgba(0,61,91,.7);">Thank you for choosing Spectre Autos</p>
+      </div>
+      <div class="p-8 space-y-6">
+        <div class="rounded-xl p-5" style="background-color:#f9fafb;">
+          <p class="text-xs text-gray-400 uppercase tracking-widest mb-1">Reference Number</p>
+          <p id="ref-number" class="bebas text-2xl tracking-wider" style="color:#003D5B;">SPECTRE-TD-2026-0001</p>
+        </div>
+        <div class="overflow-x-auto rounded-xl" style="border:1px solid #e5e7eb;">
+          <table class="w-full text-sm bg-white">
+            <tbody>
+              <tr style="border-bottom:1px solid #e5e7eb;"><td class="px-5 py-3 font-semibold" style="color:#003D5B;">Test Drive Duration</td><td class="px-5 py-3 text-gray-600">30–45 minutes</td></tr>
+              <tr style="border-bottom:1px solid #e5e7eb;background:#f9fafb;"><td class="px-5 py-3 font-semibold" style="color:#003D5B;">Location</td><td class="px-5 py-3 text-gray-600">45 Lekki-Ajah Expressway, Lekki, Lagos</td></tr>
+              <tr style="border-bottom:1px solid #e5e7eb;"><td class="px-5 py-3 font-semibold" style="color:#003D5B;">What's Included</td><td class="px-5 py-3 text-gray-600">Vehicle demo, road test, financing consultation</td></tr>
+              <tr style="background:#f9fafb;"><td class="px-5 py-3 font-semibold" style="color:#003D5B;">Cancellation Policy</td><td class="px-5 py-3 text-gray-600">Notify us at least 24 hours in advance</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 class="serif text-xl" style="color:#003D5B;">What Happens Next?</h3>
+        <ol class="space-y-3 text-sm text-gray-600">
+          <li class="flex gap-3"><span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5" style="background-color:rgba(237,174,73,.2);color:#EDAE49;">1</span>A confirmation email will arrive within 30 minutes with all booking details.</li>
+          <li class="flex gap-3"><span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5" style="background-color:rgba(237,174,73,.2);color:#EDAE49;">2</span>Our team will call or WhatsApp you within 24 hours to confirm your appointment.</li>
+          <li class="flex gap-3"><span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5" style="background-color:rgba(237,174,73,.2);color:#EDAE49;">3</span>An SMS reminder will be sent 24 hours before your scheduled test drive.</li>
+          <li class="flex gap-3"><span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5" style="background-color:rgba(237,174,73,.2);color:#EDAE49;">4</span>Please bring your valid driver's licence and a valid ID on the day.</li>
+        </ol>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="index.html" class="text-white font-semibold text-sm px-6 py-3 rounded-full" style="background-color:#003D5B;">← Return to Homepage</a>
+          <a href="booking.html" class="font-semibold text-sm px-6 py-3 rounded-full" style="border:2px solid #003D5B;color:#003D5B;">Book Another Test Drive</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-16">
+    <h2 class="serif text-3xl mb-8" style="color:#003D5B;">Frequently Asked Questions</h2>
+    <div class="space-y-3">
+      <div class="bg-white rounded-2xl overflow-hidden" style="border:1px solid #e5e7eb;">
+        <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold transition-colors hover:text-yellow-600" style="color:#003D5B;">
+          What should I bring for the test drive?
+          <svg class="faq-arrow w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-6 pb-5 text-sm text-gray-600 leading-relaxed">Please bring a valid Nigerian driver's licence and a form of ID (National ID, passport, voter's card). Proof of address is recommended if you plan to proceed with a purchase.</div>
+      </div>
+      <div class="bg-white rounded-2xl overflow-hidden" style="border:1px solid #e5e7eb;">
+        <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold transition-colors hover:text-yellow-600" style="color:#003D5B;">
+          Can someone accompany me?
+          <svg class="faq-arrow w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-6 pb-5 text-sm text-gray-600 leading-relaxed">Yes! You're welcome to bring one or two people. Only the person who booked with a valid licence may drive the vehicle.</div>
+      </div>
+      <div class="bg-white rounded-2xl overflow-hidden" style="border:1px solid #e5e7eb;">
+        <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold transition-colors hover:text-yellow-600" style="color:#003D5B;">
+          How long does a test drive take?
+          <svg class="faq-arrow w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-6 pb-5 text-sm text-gray-600 leading-relaxed">A typical test drive takes 30–45 minutes — including a vehicle demonstration, the actual road test, and a brief financing consultation.</div>
+      </div>
+      <div class="bg-white rounded-2xl overflow-hidden" style="border:1px solid #e5e7eb;">
+        <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between text-sm font-semibold transition-colors hover:text-yellow-600" style="color:#003D5B;">
+          Is there a cost for a test drive?
+          <svg class="faq-arrow w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-body px-6 pb-5 text-sm text-gray-600 leading-relaxed">No — test drives are completely free at Spectre Autos. There is no obligation to purchase.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="text-white" style="background-color:#003D5B;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs" style="color:rgba(255,255,255,.4);">&copy; <span id="footer-year">2026</span> Spectre Autos. All Rights Reserved.</p>
+      <nav class="flex flex-wrap gap-5 text-xs" style="color:rgba(255,255,255,.6);">
+        <a href="index.html"           class="hover:text-yellow-400">Home</a>
+        <a href="index.html#about"     class="hover:text-yellow-400">About</a>
+        <a href="index.html#inventory" class="hover:text-yellow-400">Inventory</a>
+        <a href="index.html#contact"   class="hover:text-yellow-400">Contact</a>
+      </nav>
+    </div>
+    <p class="text-xs mt-4 md:mt-1" style="color:rgba(255,255,255,.3);">Developed by <a class="text-yellow-500 hover:text-yellow-400" href="https://joshuaabefe.github.io/" target="_blank">Joshua Abefe</a> | Serving Lagos and All of Nigeria</p>
+  </div>
+</footer>
+
+
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-50 hidden w-12 h-12 rounded-full shadow-lg items-center justify-center" style="background-color:#EDAE49;color:#003D5B;">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>

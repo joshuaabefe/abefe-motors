@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Spectre Autos – Nigeria's premium car dealership for new and foreign-used vehicles in Lagos." />
+  <title>Spectre Autos – Premium Cars &amp; Excellence in Nigeria</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { gold: '#EDAE49', navy: '#003D5B', 'navy-light': '#30638E' } } }
+    };
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="car.png" />
+  <link rel="shortcut icon" href="car.png" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- HEADER -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-shadow duration-300" style="background-color:#003D5B;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <a href="#home" class="flex items-center gap-3 flex-shrink-0">
+        <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background-color:#EDAE49;">
+          <svg class="w-5 h-5" style="color:#003D5B;" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6.5l-1-4H4L3 6.5H1v2h1l1 11h18l1-11h1v-2h-2zm-3.2 11H6.2l-.8-9h13.2l-.8 9zm.9-11H5.3l.7-2.8h12l.7 2.8z"/></svg>
+        </div>
+        <div class="leading-none">
+          <span class="bebas text-white text-xl tracking-widest block">SPECTRE</span>
+          <span class="text-xs tracking-widest font-light uppercase" style="color:#EDAE49;">Autos</span>
+        </div>
+      </a>
+      <!-- Desktop nav — all links -->
+      <nav class="hidden lg:flex items-center gap-6" aria-label="Main navigation">
+        <a href="#home"         class="nav-link text-white/80 hover:text-white text-sm font-medium">Home</a>
+        <a href="#about"        class="nav-link text-white/80 hover:text-white text-sm font-medium">About</a>
+        <a href="#inventory"    class="nav-link text-white/80 hover:text-white text-sm font-medium">Inventory</a>
+        <a href="#services"     class="nav-link text-white/80 hover:text-white text-sm font-medium">Services</a>
+        <a href="#testimonials" class="nav-link text-white/80 hover:text-white text-sm font-medium">Testimonials</a>
+        <a href="#gallery"      class="nav-link text-white/80 hover:text-white text-sm font-medium">Gallery</a>
+        <a href="#contact"      class="nav-link text-white/80 hover:text-white text-sm font-medium">Contact</a>
+        <a href="booking.html"  class="ml-1 font-semibold text-sm px-5 py-2.5 rounded-full whitespace-nowrap transition-opacity hover:opacity-90" style="background-color:#EDAE49;color:#003D5B;">Book Test Drive</a>
+      </nav>
+      <button id="menu-btn" class="lg:hidden text-white p-2 rounded" aria-label="Menu" aria-expanded="false">
+        <svg id="icon-open"  class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu — all links -->
+  <div id="mobile-menu" style="background-color:#003D5B;border-top:1px solid rgba(255,255,255,.1)">
+    <nav class="flex flex-col px-4 py-3">
+      <a href="#home"         class="text-white/80 hover:text-white py-3 text-sm font-medium border-b border-white/10">Home</a>
+      <a href="#about"        class="text-white/80 hover:text-white py-3 text-sm font-medium border-b border-white/10">About</a>
+      <a href="#inventory"    class="text-white/80 hover:text-white py-3 text-sm font-medium border-b border-white/10">Inventory</a>
+      <a href="#services"     class="text-white/80 hover:text-white py-3 text-sm font-medium border-b border-white/10">Services</a>
+      <a href="#testimonials" class="text-white/80 hover:text-white py-3 text-sm font-medium border-b border-white/10">Testimonials</a>
+      <a href="#gallery"      class="text-white/80 hover:text-white py-3 text-sm font-medium border-b border-white/10">Gallery</a>
+      <a href="#contact"      class="text-white/80 hover:text-white py-3 text-sm font-medium border-b border-white/10">Contact</a>
+      <a href="booking.html"  class="mt-3 mb-1 text-center font-semibold text-sm px-5 py-3 rounded-full" style="background-color:#EDAE49;color:#003D5B;">Book Test Drive</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-screen flex items-end overflow-hidden" style="background-color:#003D5B;">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1600&h=900&fit=crop" alt="Luxury car showroom" class="w-full h-full object-cover" style="opacity:.28;" />
+    <div class="absolute inset-0" style="background:linear-gradient(to top,#003D5B 0%,rgba(0,61,91,.55) 55%,transparent 100%);"></div>
+  </div>
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-32 lg:pt-40">
+    <p class="text-xs sm:text-sm font-medium uppercase mb-4" style="color:#EDAE49;letter-spacing:.3em;">Nigeria's Premier Auto Dealership</p>
+    <h1 class="hero-title text-white mb-1">DRIVE YOUR</h1>
+    <h1 class="hero-title mb-6" style="color:#EDAE49;">DREAM CAR</h1>
+    <p class="max-w-xl text-base sm:text-lg leading-relaxed mb-8" style="color:rgba(255,255,255,.72);">
+      Discover an extraordinary collection of premium vehicles. Serving Lagos and all of Nigeria since <time datetime="2015">2015</time> with integrity, elegance, and excellence.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a href="#inventory" class="font-semibold px-8 py-3.5 rounded-full text-sm sm:text-base" style="background-color:#EDAE49;color:#003D5B;">Browse Inventory</a>
+      <a href="booking.html" target="_blank" class="border-2 text-white px-8 py-3.5 rounded-full text-sm sm:text-base transition-all hover:border-yellow-400 hover:text-yellow-400" style="border-color:rgba(255,255,255,.4);">Book Test Drive</a>
+    </div>
+    <div class="grid grid-cols-3 gap-4 mt-16 max-w-md">
+      <div class="text-center">
+        <p id="years-stat" class="bebas text-3xl sm:text-4xl" style="color:#EDAE49;">11+</p>
+        <p class="text-xs sm:text-sm mt-1" style="color:rgba(255,255,255,.6);">Years in Business</p>
+      </div>
+      <div class="text-center" style="border-left:1px solid rgba(255,255,255,.2);border-right:1px solid rgba(255,255,255,.2);">
+        <p class="bebas text-3xl sm:text-4xl" style="color:#EDAE49;">500+</p>
+        <p class="text-xs sm:text-sm mt-1" style="color:rgba(255,255,255,.6);">Vehicles Sold</p>
+      </div>
+      <div class="text-center">
+        <p class="bebas text-3xl sm:text-4xl" style="color:#EDAE49;">98%</p>
+        <p class="text-xs sm:text-sm mt-1" style="color:rgba(255,255,255,.6);">Customer Satisfaction</p>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6" style="color:#EDAE49;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&h=600&fit=crop" alt="Spectre Autos facility in Lekki Lagos" class="rounded-2xl w-full object-cover shadow-2xl" style="height:420px;" />
+        <div class="absolute -bottom-5 -right-5 rounded-2xl p-5 shadow-xl hidden sm:block" style="background-color:#EDAE49;color:#003D5B;">
+          <p class="bebas text-4xl">11+</p>
+          <p class="text-sm font-semibold leading-tight">Years of<br>Excellence</p>
+        </div>
+      </div>
+      <article>
+        <p class="text-xs uppercase font-semibold mb-3 tracking-widest" style="color:#EDAE49;">About Spectre Autos</p>
+        <h2 class="serif text-4xl sm:text-5xl leading-tight mb-6" style="color:#003D5B;">Nigeria's Trusted<br /><em>Automobile Partner</em></h2>
+        <p class="text-gray-600 leading-relaxed mb-6">Spectre Autos was founded with a single mission — to give Nigerians access to <strong style="color:#003D5B;">quality vehicles</strong> and <strong style="color:#003D5B;">exceptional service</strong>. From our flagship showroom in Lekki, Lagos, we've grown into one of Nigeria's most trusted automotive retailers.</p>
+        <h3 class="font-semibold text-lg mb-3" style="color:#003D5B;">Why Choose Us?</h3>
+        <ul class="space-y-2 mb-8">
+          <li class="flex items-start gap-3 text-gray-600 text-sm"><span class="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style="background-color:rgba(237,174,73,.2);color:#EDAE49;">✓</span>Extensive inventory — brand new &amp; Tokunbo vehicles</li>
+          <li class="flex items-start gap-3 text-gray-600 text-sm"><span class="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style="background-color:rgba(237,174,73,.2);color:#EDAE49;">✓</span>Flexible payment plans tailored for Nigerians</li>
+          <li class="flex items-start gap-3 text-gray-600 text-sm"><span class="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style="background-color:rgba(237,174,73,.2);color:#EDAE49;">✓</span>Full-service maintenance &amp; repair centre</li>
+          <li class="flex items-start gap-3 text-gray-600 text-sm"><span class="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style="background-color:rgba(237,174,73,.2);color:#EDAE49;">✓</span>Free vehicle documentation assistance</li>
+          <li class="flex items-start gap-3 text-gray-600 text-sm"><span class="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold" style="background-color:rgba(237,174,73,.2);color:#EDAE49;">✓</span>Nationwide delivery &amp; 90-day warranty</li>
+        </ul>
+        <blockquote class="border-l-4 pl-5 italic text-gray-500 text-sm leading-relaxed" style="border-color:#EDAE49;">"The best dealership experience in Lagos. Professional, honest, and truly understands Nigerian customers!"<footer class="not-italic mt-2 text-xs font-semibold" style="color:#003D5B;">— Mrs. Adebayo Funmilayo</footer></blockquote>
+      </article>
+    </div>
+    <div class="mt-20">
+      <p class="text-xs uppercase font-semibold mb-3 text-center tracking-widest" style="color:#EDAE49;">Virtual Tour</p>
+      <h3 class="serif text-3xl text-center mb-8" style="color:#003D5B;">Take a Showroom Tour</h3>
+      <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl" style="padding-bottom:56.25%;">
+        <iframe class="absolute inset-0 w-full h-full border-0" src="https://www.youtube.com/embed/bWlgfsU9JJk" title="Spectre Autos Showroom Tour" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVENTORY -->
+<section id="inventory" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <p class="text-xs uppercase font-semibold mb-3 tracking-widest" style="color:#EDAE49;">Our Collection</p>
+      <h2 class="serif text-4xl sm:text-5xl" style="color:#003D5B;">Featured Vehicles</h2>
+    </div>
+    <!-- Filter bar -->
+    <div class="bg-white rounded-2xl p-5 mb-10 shadow-sm flex flex-wrap items-center gap-4">
+      <span class="text-sm font-semibold" style="color:#003D5B;">Filter by price:</span>
+      <select id="price-filter" class="border border-gray-200 rounded-lg px-4 py-2 text-sm text-gray-700 bg-white">
+        <option value="all">All Prices</option>
+        <option value="20000000">Under ₦20M</option>
+        <option value="25000000">Under ₦25M</option>
+        <option value="30000000">Under ₦30M</option>
+      </select>
+      <button id="apply-filter" class="text-white text-sm px-5 py-2 rounded-lg" style="background-color:#003D5B;">Apply</button>
+      <button id="reset-filter" class="bg-gray-100 text-gray-700 text-sm px-5 py-2 rounded-lg hover:bg-gray-200">Reset</button>
+      <p id="filter-msg" class="text-sm text-gray-500 ml-auto"></p>
+    </div>
+    <!-- Cards -->
+    <div id="vehicle-grid" class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+      <article class="vehicle-card bg-white rounded-2xl overflow-hidden shadow-md" data-price="18500000">
+        <div class="overflow-hidden" style="height:220px;"><img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800&h=600&fit=crop" alt="2023 Toyota Camry" class="card-img w-full h-full object-cover" /></div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="serif text-xl leading-tight" style="color:#003D5B;">2023 Toyota Camry<br/><span class="text-sm font-sans text-gray-500">(Tokunbo — USA)</span></h3>
+            <span class="text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap" style="background-color:rgba(237,174,73,.15);color:#EDAE49;">₦18.5M</span>
+          </div>
+          <dl class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-gray-600 mb-4">
+            <dt class="font-semibold" style="color:#003D5B;">Year</dt><dd>2023</dd>
+            <dt class="font-semibold" style="color:#003D5B;">Mileage</dt><dd>15,000 km</dd>
+            <dt class="font-semibold" style="color:#003D5B;">Engine</dt><dd>2.5L 4-Cyl</dd>
+            <dt class="font-semibold" style="color:#003D5B;">Colour</dt><dd>Silver Metallic</dd>
+          </dl>
+          <p class="text-xs text-gray-500 mb-4">Leather interior · Sunroof · Reverse camera · Navigation · Alloy wheels</p>
+          <a href="booking.html" target="_blank" class="block text-center text-white text-sm font-semibold py-3 rounded-xl" style="background-color:#003D5B;">Book Test Drive</a>
+        </div>
+      </article>
+      <article class="vehicle-card bg-white rounded-2xl overflow-hidden shadow-md" data-price="16200000">
+        <div class="overflow-hidden" style="height:220px;"><img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?w=800&h=600&fit=crop" alt="2022 Honda Accord" class="card-img w-full h-full object-cover" /></div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="serif text-xl leading-tight" style="color:#003D5B;">2022 Honda Accord<br/><span class="text-sm font-sans text-gray-500">(Tokunbo — Canada)</span></h3>
+            <span class="text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap" style="background-color:rgba(237,174,73,.15);color:#EDAE49;">₦16.2M</span>
+          </div>
+          <dl class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-gray-600 mb-4">
+            <dt class="font-semibold" style="color:#003D5B;">Year</dt><dd>2022</dd>
+            <dt class="font-semibold" style="color:#003D5B;">Mileage</dt><dd>22,000 km</dd>
+            <dt class="font-semibold" style="color:#003D5B;">Engine</dt><dd>1.5L Turbo</dd>
+            <dt class="font-semibold" style="color:#003D5B;">Colour</dt><dd>Midnight Black</dd>
+          </dl>
+          <p class="text-xs text-gray-500 mb-4">Apple CarPlay · Android Auto · Lane departure warning · Power seats</p>
+          <a href="booking.html" target="_blank" class="block text-center text-white text-sm font-semibold py-3 rounded-xl" style="background-color:#003D5B;">Book Test Drive</a>
+        </div>
+      </article>
+      <article class="vehicle-card bg-white rounded-2xl overflow-hidden shadow-md" data-price="28900000">
+        <div class="overflow-hidden" style="height:220px;"><img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&h=600&fit=crop" alt="2021 Lexus RX 350" class="card-img w-full h-full object-cover" /></div>
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-3">
+            <h3 class="serif text-xl leading-tight" style="color:#003D5B;">2021 Lexus RX 350<br/><span class="text-sm font-sans text-gray-500">(Tokunbo — USA)</span></h3>
+            <span class="text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap" style="background-color:rgba(237,174,73,.15);color:#EDAE49;">₦28.9M</span>
+          </div>
+          <dl class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-gray-600 mb-4">
+            <dt class="font-semibold" style="color:#003D5B;">Year</dt><dd>2021</dd>
+            <dt class="font-semibold" style="color:#003D5B;">Mileage</dt><dd>18,500 km</dd>
+            <dt class="font-semibold" style="color:#003D5B;">Engine</dt><dd>3.5L V6</dd>
+            <dt class="font-semibold" style="color:#003D5B;">Colour</dt><dd>Pearl White</dd>
+          </dl>
+          <p class="text-xs text-gray-500 mb-4">Premium leather · Panoramic roof · Mark Levinson audio · 360° camera</p>
+          <a href="booking.html" target="_blank" class="block text-center text-white text-sm font-semibold py-3 rounded-xl" style="background-color:#003D5B;">Book Test Drive</a>
+        </div>
+      </article>
+    </div>
+    <!-- Comparison table -->
+    <div class="mt-16">
+      <h3 class="serif text-2xl mb-6" style="color:#003D5B;">Compare Our Top Models</h3>
+      <div class="overflow-x-auto rounded-2xl shadow-md">
+        <table class="w-full text-sm bg-white">
+          <thead style="background-color:#003D5B;color:white;">
+            <tr>
+              <th class="px-5 py-4 text-left font-semibold">Model</th>
+              <th class="px-5 py-4 text-left font-semibold">Year</th>
+              <th class="px-5 py-4 text-left font-semibold">Price (₦)</th>
+              <th class="px-5 py-4 text-left font-semibold">Condition</th>
+              <th class="px-5 py-4 text-left font-semibold">Fuel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b hover:bg-amber-50"><td class="px-5 py-3.5 font-medium">Toyota Camry</td><td class="px-5 py-3.5">2023</td><td class="px-5 py-3.5 font-semibold" style="color:#EDAE49;">18,500,000</td><td class="px-5 py-3.5">Tokunbo (USA)</td><td class="px-5 py-3.5">Petrol</td></tr>
+            <tr class="border-b bg-gray-50 hover:bg-amber-50"><td class="px-5 py-3.5 font-medium">Honda Accord</td><td class="px-5 py-3.5">2022</td><td class="px-5 py-3.5 font-semibold" style="color:#EDAE49;">16,200,000</td><td class="px-5 py-3.5">Tokunbo (Canada)</td><td class="px-5 py-3.5">Petrol</td></tr>
+            <tr class="hover:bg-amber-50"><td class="px-5 py-3.5 font-medium">Lexus RX 350</td><td class="px-5 py-3.5">2021</td><td class="px-5 py-3.5 font-semibold" style="color:#EDAE49;">28,900,000</td><td class="px-5 py-3.5">Tokunbo (USA)</td><td class="px-5 py-3.5">Petrol</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-24 text-white" style="background-color:#003D5B;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-xs uppercase font-semibold mb-3 tracking-widest" style="color:#EDAE49;">What We Offer</p>
+      <h2 class="serif text-4xl sm:text-5xl">Our Services</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
+      <article class="rounded-2xl p-7 hover:bg-white/10 transition-colors" style="background-color:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background-color:rgba(237,174,73,.2);"><svg class="w-6 h-6" style="color:#EDAE49;" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h3 class="serif text-xl mb-3">Flexible Payment Plans</h3>
+        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.6);">Deposit options from 30%, instalment plans up to 12 months, and partnerships with all major Nigerian banks.</p>
+      </article>
+      <article class="rounded-2xl p-7 hover:bg-white/10 transition-colors" style="background-color:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background-color:rgba(237,174,73,.2);"><svg class="w-6 h-6" style="color:#EDAE49;" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <h3 class="serif text-xl mb-3">Vehicle Documentation</h3>
+        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.6);">We handle customs clearance, registration, change of ownership, road worthiness, and insurance processing.</p>
+      </article>
+      <article class="rounded-2xl p-7 hover:bg-white/10 transition-colors" style="background-color:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background-color:rgba(237,174,73,.2);"><svg class="w-6 h-6" style="color:#EDAE49;" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <h3 class="serif text-xl mb-3">Service &amp; Maintenance</h3>
+        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.6);">Certified technicians for oil changes, brake service, tyres, engine diagnostics, transmission, and full repairs.</p>
+      </article>
+      <article class="rounded-2xl p-7 hover:bg-white/10 transition-colors" style="background-color:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background-color:rgba(237,174,73,.2);"><svg class="w-6 h-6" style="color:#EDAE49;" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <h3 class="serif text-xl mb-3">Extended Warranties</h3>
+        <p class="text-sm leading-relaxed" style="color:rgba(255,255,255,.6);">Comprehensive plans covering engine, transmission, electrical systems, air conditioning, and steering.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-xs uppercase font-semibold mb-3 tracking-widest" style="color:#EDAE49;">Customer Stories</p>
+      <h2 class="serif text-4xl sm:text-5xl" style="color:#003D5B;">What Our Clients Say</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <article class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-yellow-300 transition-colors">
+        <div class="mb-4 text-xl" style="color:#EDAE49;">★★★★★</div>
+        <blockquote class="italic text-gray-600 text-sm leading-relaxed mb-6">"I bought my Honda from Spectre Autos and the experience was flawless. They handled all the paperwork and delivery to Abuja was prompt!"</blockquote>
+        <div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face" alt="Mr. Chukwuma Okafor" class="w-11 h-11 rounded-full object-cover" style="border:2px solid #EDAE49;" /><div><p class="font-semibold text-sm" style="color:#003D5B;">Mr. Chukwuma Okafor</p><p class="text-gray-400 text-xs">Customer since 2023</p></div></div>
+      </article>
+      <article class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-yellow-300 transition-colors">
+        <div class="mb-4 text-xl" style="color:#EDAE49;">★★★★★</div>
+        <blockquote class="italic text-gray-600 text-sm leading-relaxed mb-6">"Best dealership in Lagos! They truly understand Nigerian customers and the payment plan made owning my dream car so easy."</blockquote>
+        <div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face" alt="Mrs. Amina Bello" class="w-11 h-11 rounded-full object-cover" style="border:2px solid #EDAE49;" /><div><p class="font-semibold text-sm" style="color:#003D5B;">Mrs. Amina Bello</p><p class="text-gray-400 text-xs">Customer since 2022</p></div></div>
+      </article>
+      <article class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-yellow-300 transition-colors">
+        <div class="mb-4 text-xl" style="color:#EDAE49;">★★★★★</div>
+        <blockquote class="italic text-gray-600 text-sm leading-relaxed mb-6">"Professional service from start to finish. They handled customs and full registration for me. I recommend Spectre Autos to everyone!"</blockquote>
+        <div class="flex items-center gap-3"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Engr. Biodun Taiwo" class="w-11 h-11 rounded-full object-cover" style="border:2px solid #EDAE49;" /><div><p class="font-semibold text-sm" style="color:#003D5B;">Engr. Biodun Taiwo</p><p class="text-gray-400 text-xs">Customer since 2024</p></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-xs uppercase font-semibold mb-3 tracking-widest" style="color:#EDAE49;">Our Showroom</p>
+      <h2 class="serif text-4xl sm:text-5xl" style="color:#003D5B;">Gallery</h2>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="gallery-item overflow-hidden rounded-2xl" style="aspect-ratio:4/3;"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop" alt="Sports car" class="gimg w-full h-full object-cover" /></div>
+      <div class="gallery-item overflow-hidden rounded-2xl" style="aspect-ratio:4/3;"><img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&h=400&fit=crop" alt="Car interior" class="gimg w-full h-full object-cover" /></div>
+      <div class="gallery-item overflow-hidden rounded-2xl col-span-2 lg:col-span-1" style="aspect-ratio:4/3;"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop" alt="Car exterior" class="gimg w-full h-full object-cover" /></div>
+      <div class="gallery-item overflow-hidden rounded-2xl" style="aspect-ratio:4/3;"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=400&fit=crop" alt="Car keys" class="gimg w-full h-full object-cover" /></div>
+      <div class="gallery-item overflow-hidden rounded-2xl" style="aspect-ratio:4/3;"><img src="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=600&h=400&fit=crop" alt="Service centre" class="gimg w-full h-full object-cover" /></div>
+      <div class="gallery-item overflow-hidden rounded-2xl" style="aspect-ratio:4/3;"><img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&h=400&fit=crop" alt="Happy customers" class="gimg w-full h-full object-cover" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMOTIONS + CALCULATOR -->
+<section class="py-24" style="background-color:#EDAE49;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <p class="text-xs uppercase font-semibold mb-3 tracking-widest" style="color:rgba(0,61,91,.65);">Limited Time</p>
+        <h2 class="serif text-4xl sm:text-5xl mb-6" style="color:#003D5B;">Current Promotions</h2>
+        <div class="rounded-2xl p-6 mb-6" style="background-color:rgba(255,255,255,.35);">
+          <h3 class="font-semibold text-lg mb-2" style="color:#003D5B;">🎉 Free Registration Month</h3>
+          <p class="text-sm leading-relaxed" style="color:rgba(0,61,91,.82);">Free vehicle registration for all purchases this month, <strong>plus</strong> complimentary 3-month maintenance package!</p>
+          <p class="text-xs mt-3" style="color:rgba(0,61,91,.55);">*Offer valid until end of month. T&amp;Cs apply.</p>
+        </div>
+        <a href="#contact" class="inline-block text-white font-semibold px-8 py-3.5 rounded-full text-sm" style="background-color:#003D5B;">Enquire Now →</a>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <h3 class="serif text-2xl mb-6" style="color:#003D5B;">Payment Calculator</h3>
+        <div class="space-y-4">
+          <div>
+            <label for="vehicle-price" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Vehicle Price (₦)</label>
+            <input type="number" id="vehicle-price" min="1000000" max="100000000" placeholder="e.g. 18500000" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="deposit" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Deposit (%)</label>
+              <input type="number" id="deposit" min="30" max="100" value="30" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" />
+            </div>
+            <div>
+              <label for="months" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Period</label>
+              <select id="months" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white">
+                <option value="3">3 months</option>
+                <option value="6">6 months</option>
+                <option value="9">9 months</option>
+                <option value="12">12 months</option>
+              </select>
+            </div>
+          </div>
+          <button id="calc-btn" class="w-full text-white font-semibold py-3.5 rounded-xl text-sm" style="background-color:#003D5B;">Calculate Monthly Payment</button>
+          <div id="calc-result" class="hidden rounded-xl p-5 text-sm" style="background-color:rgba(237,174,73,.12);border:1px solid rgba(237,174,73,.35);color:#003D5B;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-xs uppercase font-semibold mb-3 tracking-widest" style="color:#EDAE49;">Get in Touch</p>
+      <h2 class="serif text-4xl sm:text-5xl" style="color:#003D5B;">Contact Us</h2>
+    </div>
+    <div class="grid lg:grid-cols-5 gap-12">
+      <div class="lg:col-span-2 space-y-8">
+        <address class="not-italic">
+          <h3 class="serif text-2xl mb-4" style="color:#003D5B;">Spectre Autos</h3>
+          <p class="text-gray-600 text-sm leading-loose">45 Lekki-Ajah Expressway<br/>Beside Total Filling Station<br/>Island, Lagos State, Nigeria</p>
+          <ul class="mt-5 space-y-3 text-sm">
+            <li class="flex items-center gap-3 text-gray-600"><span class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#003D5B;"><svg class="w-4 h-4" style="color:#EDAE49;" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg></span><a href="tel:+234000000000" class="hover:text-yellow-500">+234 *** *** ****</a></li>
+            <li class="flex items-center gap-3 text-gray-600"><span class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#003D5B;"><svg class="w-4 h-4" style="color:#EDAE49;" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg></span><a href="mailto:info@spectreautos.com" class="hover:text-yellow-500">info@spectreautos.***</a></li>
+          </ul>
+        </address>
+        <div>
+          <h4 class="font-semibold mb-3" style="color:#003D5B;">Business Hours</h4>
+          <table class="w-full text-sm"><tbody>
+            <tr class="border-b border-gray-100"><td class="py-2 text-gray-700 font-medium">Mon – Fri</td><td class="py-2 text-gray-500 text-right">8:00 AM – 6:00 PM</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 text-gray-700 font-medium">Saturday</td><td class="py-2 text-gray-500 text-right">9:00 AM – 5:00 PM</td></tr>
+            <tr><td class="py-2 text-gray-700 font-medium">Sunday</td><td class="py-2 text-gray-500 text-right">By Appointment</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <form id="contact-form" novalidate class="lg:col-span-3 space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div><label for="c-name" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Full Name <span style="color:#EDAE49;">*</span></label><input type="text" id="c-name" name="name" required placeholder="Your full name" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" /></div>
+          <div><label for="c-email" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Email <span style="color:#EDAE49;">*</span></label><input type="email" id="c-email" name="email" required placeholder="you@example.com" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" /></div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div><label for="c-phone" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Phone Number</label><input type="tel" id="c-phone" name="phone" placeholder="08012345678" maxlength="11" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white" /></div>
+          <div><label for="c-interest" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">I'm Interested In</label><select id="c-interest" name="interest" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white"><option value="">-- Select an option --</option><option>Buying a vehicle</option><option>Tokunbo vehicles</option><option>Brand new vehicles</option><option>Payment plan inquiry</option><option>Service appointment</option><option>Other</option></select></div>
+        </div>
+        <div><label for="c-message" class="block text-sm font-semibold mb-1.5" style="color:#003D5B;">Message <span style="color:#EDAE49;">*</span></label><textarea id="c-message" name="message" rows="5" required placeholder="Tell us how we can help you…" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-white resize-none"></textarea></div>
+        <div class="flex items-start gap-2.5"><input type="checkbox" id="c-newsletter" name="newsletter" class="mt-1 cursor-pointer" style="accent-color:#EDAE49;" /><label for="c-newsletter" class="text-sm text-gray-500 cursor-pointer">Subscribe for exclusive deals and vehicle updates</label></div>
+        <div id="form-feedback" class="hidden rounded-xl px-5 py-4 text-sm font-medium"></div>
+        <div class="flex gap-4">
+          <button type="submit" class="flex-1 text-white font-semibold py-3.5 rounded-xl text-sm" style="background-color:#003D5B;">Send Message</button>
+          <button type="reset" id="form-reset" class="px-6 bg-gray-100 text-gray-700 font-semibold py-3.5 rounded-xl hover:bg-gray-200 text-sm">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="text-white" style="background-color:#003D5B;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background-color:#EDAE49;"><svg class="w-5 h-5" style="color:#003D5B;" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6.5l-1-4H4L3 6.5H1v2h1l1 11h18l1-11h1v-2h-2zm-3.2 11H6.2l-.8-9h13.2l-.8 9zm.9-11H5.3l.7-2.8h12l.7 2.8z"/></svg></div>
+          <div><span class="bebas text-white text-xl tracking-widest block">SPECTRE</span><span class="text-xs tracking-widest font-light uppercase" style="color:#EDAE49;">Autos</span></div>
+        </div>
+        <p class="text-sm leading-relaxed max-w-xs" style="color:rgba(255,255,255,.5);">Nigeria's trusted automobile partner, serving Lagos and all of Nigeria since 2015 with integrity and excellence.</p>
+        <div class="flex gap-3 mt-6">
+          <a href="#" aria-label="Facebook"  class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color:rgba(255,255,255,.1);">f</a>
+          <a href="#" aria-label="X"   class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color:rgba(255,255,255,.1);">𝕏</a>
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color:rgba(255,255,255,.1);">🅾</a>
+          <a href="#" aria-label="WhatsApp"  class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color:rgba(255,255,255,.1);">🕻</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-semibold text-xs uppercase mb-5 tracking-widest" style="color:#EDAE49;">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm" style="color:rgba(255,255,255,.6);">
+          <li><a href="#home"         class="hover:text-yellow-400">Home</a></li>
+          <li><a href="#about"        class="hover:text-yellow-400">About Us</a></li>
+          <li><a href="#inventory"    class="hover:text-yellow-400">Inventory</a></li>
+          <li><a href="#services"     class="hover:text-yellow-400">Services</a></li>
+          <li><a href="#testimonials" class="hover:text-yellow-400">Testimonials</a></li>
+          <li><a href="booking.html"  class="hover:text-yellow-400">Book Test Drive</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-xs uppercase mb-5 tracking-widest" style="color:#EDAE49;">Legal</h4>
+        <ul class="space-y-2.5 text-sm" style="color:rgba(255,255,255,.6);">
+          <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-yellow-400">Terms of Service</a></li>
+          <li><a href="#contact" class="hover:text-yellow-400">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-color:rgba(255,255,255,.1);">
+      <p class="text-xs" style="color:rgba(255,255,255,.4);">&copy; <span id="footer-year">2026</span> Spectre Autos. All Rights Reserved.</p>
+      <p class="text-xs" style="color:rgba(255,255,255,.3);">Developed by <a class="text-yellow-500 hover:text-yellow-400" href="https://joshuaabefe.github.io/" target="_blank">Joshua Abefe</a> | Serving Lagos and All of Nigeria</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-50 hidden w-12 h-12 rounded-full shadow-lg items-center justify-center" style="background-color:#EDAE49;color:#003D5B;">
+  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
